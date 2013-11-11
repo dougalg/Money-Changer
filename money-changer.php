@@ -28,7 +28,7 @@ function get_id($id) {
     return $fn_pref+$id;
 }
 
-function change_money($atts, $link_content = nulls) {
+function change_money($atts, $link_content = null) {
     extract(shortcode_atts(array(
         "amount" => 0,
         "from" => 'USD',
@@ -37,6 +37,8 @@ function change_money($atts, $link_content = nulls) {
         "id" => null
     ), $atts));
     $id = get_id($id);
+    if ($link_content === null)
+        $link_content = $DEFAULT_LINK_TEXT;
     return "<script type=\"text/javascript\">/*<![CDATA[*//*---->*/convert_money($amount, \"$from\", \"$to\", $round, $id, $link_content)/*--*//*]]>*/</script><div id='$id'></div>";
 }
 add_shortcode("change_money", "change_money");

@@ -3,6 +3,7 @@ function get_currency_list(currency_string) {
 }
 
 function make_link(text, amount, id) {
+    var linkSpan = $(document.createElement("span")).click(showHideConversion);
     var link = $(document.createElement("a")).click(showHideConversion);
 }
 
