@@ -24,7 +24,7 @@ $DEFAULT_ATTS = array(
 function enqueue_coin_scripts() {
     global $plugin_url;
     wp_register_script( 'coinmill', 'http://coinmill.com/frame.js');
-    wp_register_script( 'coinmill-custom', $plugin_url.'change_money.js', array( 'jquery' ));
+    wp_register_script( 'coinmill-custom', $plugin_url.'change_money.min.js', array( 'jquery' ));
     
     wp_enqueue_script( 'coinmill' );
     wp_enqueue_script( 'coinmill-custom' );
@@ -71,7 +71,7 @@ function change_money_table_sc($atts) {
 
 // Creates a shortcode to create a link to show a specific table with a given ID
 function change_money_link_sc($atts, $link_content=null) {
-    return change_money_link_placeholder($id, $link_content);
+    return change_money_link_placeholder($atts, $link_content);
 }
 
 // CCreates a shortcode to create a link and a table with a given ID (or without)

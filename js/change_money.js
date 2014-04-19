@@ -1,5 +1,6 @@
 (function($){
-    var prefix = function prefixF(id) {
+    var tables = Array(),
+        prefix = function prefixF(id) {
             return "js_cm_"+id;
         },
         numberWithCommas = function numberWithCommasF(x) {
@@ -11,18 +12,16 @@
             return currency_string.split(/\s*,\s*/);
         },
         init = function initF() {
-            make_links();
             make_tables();
+            make_links();
         },
         make_links = function make_linksF() {
             /*
              Loop through all links and set their clickevents
              */
             $('.'+prefix('link')).each(function(){
-                var JQthis = $(this),
-                    target = $('#'+JQthis.attr('cm_target'));
                 JQthis.click(function(e){
-                        target.toggle();
+                        tables[$(this).attr('cm_target')].toggle();
                         e.preventDefault();
                         return false;
                     });
@@ -45,6 +44,8 @@
                     num_conversions = tos.length,
                     new_el,
                     i;
+
+                tables[JQthis.attr('id')] = JQthis;
 
                 for (i=0;i<num_conversions;i++) {
                     new_el = $(document.createElement("th")).html(tos[i]);
