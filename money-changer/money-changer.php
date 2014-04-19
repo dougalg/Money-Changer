@@ -49,7 +49,7 @@ function change_money_link_placeholder($atts, $link_content, $id=null) {
     if ($link_content === null || $link_content === '')
         $link_content = $DEFAULT_LINK_TEXT;
 
-    return $amount.$from.' [<a class="'.prefix('link').'" cm_target="'.prefix($id).'">'.$link_content.'</a>]';
+    return ' <a class="'.prefix('link').'" cm_target="'.prefix($id).'">'.$link_content.'</a>';
 }
 
 // Creates a placeholder <span> to get modified by the JS to hold

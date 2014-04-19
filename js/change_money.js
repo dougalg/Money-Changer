@@ -18,9 +18,13 @@
         make_links = function make_linksF() {
             /*
              Loop through all links and set their clickevents
+             Also prepend the 'amount' and 'from' values
              */
             $('.'+prefix('link')).each(function(){
-                JQthis.click(function(e){
+                var target = $('#'+$(this).attr('cm_target'));
+                $(this).before(target.attr('cm_amount')+target.attr('cm_from')+' [')
+                    .after(']')
+                    .click(function(e){
                         tables[$(this).attr('cm_target')].toggle();
                         e.preventDefault();
                         return false;

@@ -44,17 +44,12 @@ Example with all parameters set
 
 ##Link Only##
 
-    [change_money_link id="optional" amount="123" from="THB"]Link text[/change_money_link]
+    [change_money_link id="optional"]Link text[/change_money_link]
 
-Setting a link only which when clicked will toggle the table with id "optional".
+Setting a link only which when clicked will toggle the table with id "optional". It will automatically retrieve the *amount* and *from* values from the related table. 
 
 ##Table Only##
 
     [change_money_table from="USD" to="CAD,THB" round="2" id="optional" hidden="false" amount="300"]
 
 Creates a table which will be toggle by the previous link, but which has no link by default.
-
-#Future Plans#
-
-1. Add the ability for a hovering tooltip style
-2. Make the "change_money_link" only require an ID and automatically get the correct **from** and **amount** values.
