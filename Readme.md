@@ -1,14 +1,21 @@
 #Money-Changer#
+Contributors: dougalg
+Tags: currency conversion
+Requires at least: 3.4
+Tested up to: 3.9
+Stable tag: 3.9
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Money-changer is a simple Wordpress plugin for displaying currency conversions to users using the [http://coinmill.com/](CoinMill) interface. It provides three shortcodes:
+Money-changer is a simple Wordpress plugin for displaying currency conversions to users using the CoinMill interface. It provides three shortcodes:
 
 1. change_money - Create a link and table together
 2. change_money_link - Create a link to toggle a table with a given ID
-2. change_money_table - Create a table with a given ID
+3. change_money_table - Create a table with a given ID
 
 ##Installation##
 
-Put the "Money Changer" folder in your "plugins" directory.
+Put the "Money Changer" folder in your "plugins" directory or install via the Wordpress plugin interface.
 
 ##Basic Usage##
 
